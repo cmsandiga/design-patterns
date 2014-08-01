@@ -10,12 +10,14 @@ import com.makoto.ducksimulator.behavior.quack.QuackBehavior;
  * @author makoto
  * 
  */
-public abstract class Duck {
+public abstract class Duck
+{
 
 	FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
 
-	public Duck() {
+	public Duck()
+	{
 	}
 
 	/**
@@ -26,21 +28,24 @@ public abstract class Duck {
 	/**
 	 * Delegating the fly behavior to interface
 	 */
-	public void performFly() {
+	public void performFly()
+	{
 		flyBehavior.fly();
 	}
 
 	/**
 	 * Delegating the quack behavior to interface
 	 */
-	public void performQuack() {
+	public void performQuack()
+	{
 		quackBehavior.quack();
 	}
 
 	/**
 	 * duck swim
 	 */
-	public void swim() {
+	public void swim()
+	{
 		System.out.println("All duck  float , even decoys!");
 	}
 }

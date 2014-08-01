@@ -6,7 +6,8 @@ package com.makoto.ducksimulator.behavior.fly;
  * @author makoto
  * 
  */
-public interface FlyBehavior {
+public interface FlyBehavior
+{
 
 	/**
 	 * Fly behavior

@@ -9,14 +9,16 @@ import com.makoto.ducksimulator.duck.MallarDuck;
  * @author makoto
  * 
  */
-public class MiniDuckSimulator {
+public class MiniDuckSimulator
+{
 
 	/**
 	 * THe main method
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Duck mallard = new MallarDuck();
 		mallard.performFly();
 		mallard.performQuack();

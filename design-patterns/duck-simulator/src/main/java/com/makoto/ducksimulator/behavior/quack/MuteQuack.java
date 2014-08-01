@@ -6,10 +6,12 @@ package com.makoto.ducksimulator.behavior.quack;
  * @author makoto
  * 
  */
-public class MuteQuack implements QuackBehavior {
+public class MuteQuack implements QuackBehavior
+{
 
 	@Override
-	public void quack() {
+	public void quack()
+	{
 		System.out.println("<< Silence >>");
 	}
 

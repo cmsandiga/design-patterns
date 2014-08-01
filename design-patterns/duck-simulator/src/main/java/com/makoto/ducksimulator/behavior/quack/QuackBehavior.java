@@ -6,10 +6,11 @@ package com.makoto.ducksimulator.behavior.quack;
  * @author makoto
  * 
  */
-public interface QuackBehavior {
+public interface QuackBehavior
+{
 
 	/**
-	 * Sound quack 
+	 * Sound quack
 	 */
 	abstract void quack();
 }

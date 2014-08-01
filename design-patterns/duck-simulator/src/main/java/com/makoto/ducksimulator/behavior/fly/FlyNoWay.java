@@ -7,10 +7,12 @@ package com.makoto.ducksimulator.behavior.fly;
  * @author makoto
  * 
  */
-public class FlyNoWay implements FlyBehavior {
+public class FlyNoWay implements FlyBehavior
+{
 
 	@Override
-	public void fly() {
+	public void fly()
+	{
 		System.out.println("I'm sorry i can't fly quack quack !!");
 	}
 

@@ -9,15 +9,18 @@ import com.makoto.ducksimulator.behavior.quack.Quack;
  * @author makoto
  * 
  */
-public class MallarDuck extends Duck {
+public class MallarDuck extends Duck
+{
 
-	public MallarDuck() {
+	public MallarDuck()
+	{
 		quackBehavior = new Quack();
 		flyBehavior = new FlyWithWings();
 	}
 
 	@Override
-	public void display() {
+	public void display()
+	{
 		System.out.println("I'm a mallar duck");
 	}
 
