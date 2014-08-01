@@ -48,4 +48,20 @@ public abstract class Duck
 	{
 		System.out.println("All duck  float , even decoys!");
 	}
+
+	/**
+	 * Setting the fly behavior at runtime
+	 */
+	public void setFlyBehavior(FlyBehavior flyBehavior)
+	{
+		this.flyBehavior = flyBehavior;
+	}
+
+	/**
+	 * Setting the quack Behavior at runtime
+	 */
+	public void setQuackBeavior(QuackBehavior quackBehavior)
+	{
+		this.quackBehavior = quackBehavior;
+	}
 }

@@ -10,6 +10,7 @@
 
 	<modules>
 		<module>duck-simulator</module>
+		<module>adventure-game</module>
 	</modules>
 
 	<properties>
