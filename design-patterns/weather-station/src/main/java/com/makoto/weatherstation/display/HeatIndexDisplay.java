@@ -3,22 +3,15 @@ package com.makoto.weatherstation.display;
 import com.makoto.weatherstation.observer.Observer;
 import com.makoto.weatherstation.subject.Subject;
 
-/**
- * Display the current statistics
- * 
- * @author makoton
- * 
- */
-public class StatisticsDisplay implements DisplayElement, Observer
+public class HeatIndexDisplay implements DisplayElement, Observer
 {
 	private Subject weatherData;
 	
-	public StatisticsDisplay(Subject weatherData)
+	public HeatIndexDisplay(Subject weatherData)
 	{
 		this.weatherData = weatherData;
 		this.weatherData.registerObserver(this);
 	}
-	
 	@Override
 	public void update(float temperature, float humidity, float pressure)
 	{
@@ -28,7 +21,7 @@ public class StatisticsDisplay implements DisplayElement, Observer
 	@Override
 	public void display()
 	{
-		System.out.println("Avg/Max/Min:");
+		System.out.println("Heat index");
 	}
 
 }

@@ -4,6 +4,7 @@
 package com.makoto.weatherstation.display;
 
 import com.makoto.weatherstation.observer.Observer;
+import com.makoto.weatherstation.subject.Subject;
 
 /**
  * @author makoton
@@ -11,25 +12,25 @@ import com.makoto.weatherstation.observer.Observer;
  */
 public class ForecastDisplay implements Observer, DisplayElement
 {
-
-	/* (non-Javadoc)
-	 * @see com.makoto.weatherstation.display.DisplayElement#display()
-	 */
+	private Subject weatherData;
+	
+	public ForecastDisplay(Subject weatherData)
+	{
+		this.weatherData = weatherData;
+		this.weatherData.registerObserver(this);
+	}
+	
 	@Override
 	public void display()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("Forecast: " );
 	}
 
-	/* (non-Javadoc)
-	 * @see com.makoto.weatherstation.observer.Observer#update()
-	 */
 	@Override
-	public void update()
+	public void update(float temperature, float humidity, float pressure)
 	{
-		// TODO Auto-generated method stub
-
+		display();
 	}
+
 
 }
