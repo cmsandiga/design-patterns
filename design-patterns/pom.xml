@@ -11,6 +11,7 @@
 	<modules>
 		<module>duck-simulator</module>
 		<module>adventure-game</module>
+		<module>weather-station</module>
 	</modules>
 
 	<properties>
