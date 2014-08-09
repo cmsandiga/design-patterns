@@ -12,6 +12,7 @@
 		<module>duck-simulator</module>
 		<module>adventure-game</module>
 		<module>weather-station</module>
+		<module>weather-station-java-api</module>
 	</modules>
 
 	<properties>
