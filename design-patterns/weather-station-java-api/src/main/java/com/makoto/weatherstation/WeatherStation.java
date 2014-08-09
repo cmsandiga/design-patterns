@@ -26,11 +26,11 @@ public class WeatherStation
 		weatherData.deleteObserver(currenConditionDisplay);		
 		weatherData.setMeasuraments(80, 50, 30.4f);
 		weatherData.setMeasuraments(82, 70, 29.2f);
-		
+		weatherData.setMeasuraments(78, 90, 29.2f);
 		weatherData.deleteObserver(statisticsDisplay);
 		weatherData.deleteObserver(forecastDisplay);
 		weatherData.deleteObserver(heatIndexDisplay);
-		weatherData.setMeasuraments(78, 90, 29.2f);
+		
 		
 
 
