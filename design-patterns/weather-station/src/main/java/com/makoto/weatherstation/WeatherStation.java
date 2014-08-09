@@ -18,14 +18,15 @@ public class WeatherStation
 	{
 		WeatherData weatherData = new WeatherData();
 		
-		CurrentConditionDisplay currentDisplay = new CurrentConditionDisplay(weatherData);
-		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
-		ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
-		HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+		new CurrentConditionDisplay(weatherData);
+		new StatisticsDisplay(weatherData);
+		new ForecastDisplay(weatherData);
+		new HeatIndexDisplay(weatherData);
 		
 		weatherData.setMeasuraments(80, 50, 30.4f);
 		weatherData.setMeasuraments(82, 70, 29.2f);		
 		weatherData.setMeasuraments(78, 90, 29.2f);
+		
 		
 	}
 }
