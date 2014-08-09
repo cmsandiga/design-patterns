@@ -14,6 +14,7 @@
 		<module>weather-station</module>
 		<module>weather-station-java-api</module>
 		<module>observer-examples</module>
+		<module>decorator-starbuzz</module>
 	</modules>
 
 	<properties>

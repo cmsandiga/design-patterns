@@ -30,8 +30,7 @@ public class SwingObservableExample
 		btnShouldDoI.addActionListener(new AngelListener());
 		btnShouldDoI.addActionListener(new DevilListener());
 		
-		jFrame.add(btnShouldDoI);
-		JFrame.setDefaultLookAndFeelDecorated(true);
+		jFrame.add(btnShouldDoI); 			
 		jFrame.setBounds(500, 500, 500, 500);
 		jFrame.setVisible(true);
 		
