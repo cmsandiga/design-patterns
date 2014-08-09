@@ -6,7 +6,6 @@ import com.makoto.weatherstation.display.HeatIndexDisplay;
 import com.makoto.weatherstation.display.StatisticsDisplay;
 import com.makoto.weatherstation.subject.WeatherData;
 
-
 /**
  * The main execution class
  * 
@@ -18,16 +17,22 @@ public class WeatherStation
 	public static void main(String[] args)
 	{
 		WeatherData weatherData = new WeatherData();
-		
-		new CurrentConditionDisplay(weatherData);
-		new StatisticsDisplay(weatherData);
-		new ForecastDisplay(weatherData);
-		new HeatIndexDisplay(weatherData);
-		
+
+		CurrentConditionDisplay currenConditionDisplay = new CurrentConditionDisplay(weatherData);
+		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+		ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+		HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+
+		weatherData.deleteObserver(currenConditionDisplay);		
 		weatherData.setMeasuraments(80, 50, 30.4f);
-		weatherData.setMeasuraments(82, 70, 29.2f);		
+		weatherData.setMeasuraments(82, 70, 29.2f);
+		
+		weatherData.deleteObserver(statisticsDisplay);
+		weatherData.deleteObserver(forecastDisplay);
+		weatherData.deleteObserver(heatIndexDisplay);
 		weatherData.setMeasuraments(78, 90, 29.2f);
 		
-		
+
+
 	}
 }

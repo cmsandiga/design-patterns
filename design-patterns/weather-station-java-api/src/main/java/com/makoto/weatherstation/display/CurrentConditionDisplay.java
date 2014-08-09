@@ -3,46 +3,41 @@ package com.makoto.weatherstation.display;
 import java.util.Observable;
 import java.util.Observer;
 
-import com.makoto.weatherstation.subject.Subject;
+import com.makoto.weatherstation.subject.WeatherData;
 
 /**
- * Show the current condition of the weather
+ * Show the current condition of the weather using the java API
  * 
+ * @see {@link Observer}
  * @author makoton
  * 
  */
-public class CurrentConditionDisplay implements DisplayElement, Observer
-{
+public class CurrentConditionDisplay implements DisplayElement, Observer {
 
 	private float temperature;
 	private float humidity;
-	private Subject weatherData;
+	private Observable observable;
 
-	public CurrentConditionDisplay(Subject weatherData)
-	{
-		this.weatherData = weatherData;
-		this.weatherData.registerObserver(this);
+	public CurrentConditionDisplay(Observable weatherData) {
+		this.observable = weatherData;
+		this.observable.addObserver(this);
 	}
-
-	@Override
-	public void update(float temperature, float humidity, float pressure)
-	{
-		this.temperature = temperature;
-		this.humidity = humidity;
-		display();
-
-	}
-
-	@Override
-	public void display()
-	{
-		System.out.println("Current conditions:" + temperature + " F degree and " + humidity + " % humidity");
-	}
-
+	
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
+		if (o instanceof WeatherData) {
+			WeatherData weatherData = (WeatherData) o;
+			this.temperature = weatherData.getTemperature();
+			this.humidity = weatherData.getHumidity();
+			display();
+		}
+
+	}
+
+	@Override
+	public void display() {
+		System.out.println("Current conditions:" + temperature
+				+ " F degree and " + humidity + " % humidity");
 	}
 
 }

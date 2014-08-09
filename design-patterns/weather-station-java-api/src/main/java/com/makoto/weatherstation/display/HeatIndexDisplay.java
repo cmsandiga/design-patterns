@@ -1,7 +1,9 @@
 package com.makoto.weatherstation.display;
 
-import com.makoto.weatherstation.observer.Observer;
-import com.makoto.weatherstation.subject.Subject;
+import java.util.Observable;
+import java.util.Observer;
+
+import com.makoto.weatherstation.subject.WeatherData;
 
 /**
  * The heat index display
@@ -13,26 +15,31 @@ public class HeatIndexDisplay implements DisplayElement, Observer
 {
 	float heatIndex = 0.0f;
 
-	private Subject weatherData;
+	private Observable observable;
 
-	public HeatIndexDisplay(Subject weatherData)
+	public HeatIndexDisplay(Observable weatherData)
 	{
-		this.weatherData = weatherData;
-		this.weatherData.registerObserver(this);
+		this.observable = weatherData;
+		this.observable.addObserver(this);
 	}
 
 	@Override
-	public void update(float temperature, float humidity, float pressure)
+	public void update(Observable o, Object arg)
 	{
-		heatIndex = computeHeatIndex(temperature, humidity);
-		display();
+		if (o instanceof WeatherData)
+		{
+			WeatherData weatherData = (WeatherData)o;
+			heatIndex = computeHeatIndex(weatherData.getTemperature(), weatherData.getHumidity());
+			display();
+		}
 	}
 	
 	/**
 	 * Compute the index , i dont how its work :P
+	 * 
 	 * @param temperature
 	 * @param humidity
-	 * @return
+	 * @return computedHeatIndex
 	 */
 	private float computeHeatIndex(float temperature, float humidity)
 	{
