@@ -1,10 +1,10 @@
-package com.makoto.beverage;
+package com.makoto.starbuzz.beverage;
 
 public class HouseBlend  extends Beverage
 {
 	public HouseBlend()
 	{
-		description  = "House Blend Coffe";
+		description  = "House Blend Coffe ";
 	}
 	@Override
 	public double cost()

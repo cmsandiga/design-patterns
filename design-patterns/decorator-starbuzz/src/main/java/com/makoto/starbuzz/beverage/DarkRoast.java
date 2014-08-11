@@ -1,11 +1,11 @@
-package com.makoto.beverage;
+package com.makoto.starbuzz.beverage;
 
 public class DarkRoast extends Beverage
 {
 
 	public DarkRoast()
 	{
-		description  = "Dark Roast";
+		description  = "Dark Roast ";
 	}
 	@Override
 	public double cost()

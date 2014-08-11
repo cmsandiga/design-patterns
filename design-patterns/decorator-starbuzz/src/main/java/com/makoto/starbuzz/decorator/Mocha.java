@@ -1,11 +1,9 @@
-package com.makoto.decorator;
+package com.makoto.starbuzz.decorator;
 
-import com.makoto.beverage.Beverage;
+import com.makoto.starbuzz.beverage.Beverage;
 
 public class Mocha extends CondimentDecorator
 {
-	Beverage beverage;
-
 	public Mocha(Beverage beverage)
 	{
 		this.beverage = beverage;
@@ -14,7 +12,7 @@ public class Mocha extends CondimentDecorator
 	@Override
 	public double cost()
 	{
-		return this.beverage.cost() + 0.20;
+		return this.beverage.cost() + 0.20 + getSize().getPrice();
 	}
 
 	@Override

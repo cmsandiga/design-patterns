@@ -1,10 +1,10 @@
-package com.makoto.beverage;
+package com.makoto.starbuzz.beverage;
 
 public class Decaf extends Beverage
 {
 	public Decaf()
 	{
-		description =  "Decaf";
+		description =  "Decaf ";
 	}
 	@Override
 	public double cost()

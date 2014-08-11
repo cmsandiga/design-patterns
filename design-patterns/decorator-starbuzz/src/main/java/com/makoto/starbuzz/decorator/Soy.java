@@ -1,16 +1,13 @@
-package com.makoto.decorator;
+package com.makoto.starbuzz.decorator;
 
-import com.makoto.beverage.Beverage;
+import com.makoto.starbuzz.beverage.Beverage;
 
 /**
  * @author makoton
  * 
  */
 public class Soy extends CondimentDecorator
-{
-
-	Beverage beverage;
-	
+{	
 	public Soy(Beverage beverage)
 	{
 		this.beverage = beverage;
@@ -26,7 +23,7 @@ public class Soy extends CondimentDecorator
 	@Override
 	public double cost()
 	{
-		return this.beverage.cost() + 0.15;
+		return this.beverage.cost() + 0.15 + getSize().getPrice();
 	}
 	
 }

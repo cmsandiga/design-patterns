@@ -1,10 +1,10 @@
-package com.makoto.beverage;
+package com.makoto.starbuzz.beverage;
 
 public class Expresso extends Beverage
 {
 	public Expresso()
 	{
-		description =  "Expresso";
+		description =  "Expresso ";
 	}
 	
 	@Override
