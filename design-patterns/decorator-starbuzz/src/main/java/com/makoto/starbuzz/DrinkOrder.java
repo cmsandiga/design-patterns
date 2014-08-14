@@ -1,11 +1,10 @@
 package com.makoto.starbuzz;
 
 import com.makoto.starbuzz.beverage.Beverage;
+import com.makoto.starbuzz.beverage.Beverage.Size;
 import com.makoto.starbuzz.beverage.DarkRoast;
-import com.makoto.starbuzz.beverage.Decaf;
 import com.makoto.starbuzz.beverage.Expresso;
 import com.makoto.starbuzz.beverage.HouseBlend;
-import com.makoto.starbuzz.beverage.Beverage.Size;
 import com.makoto.starbuzz.decorator.Milk;
 import com.makoto.starbuzz.decorator.Mocha;
 import com.makoto.starbuzz.decorator.Soy;
