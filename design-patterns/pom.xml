@@ -17,6 +17,7 @@
 		<module>decorator-starbuzz</module>
 		<module>decorator-javaio</module>
 		<module>factory-method-pizza-store</module>
+		<module>abstract-factory-pizza-store</module>
 	</modules>
 
 	<properties>
