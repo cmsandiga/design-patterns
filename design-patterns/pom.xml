@@ -18,6 +18,7 @@
 		<module>decorator-javaio</module>
 		<module>factory-method-pizza-store</module>
 		<module>abstract-factory-pizza-store</module>
+		<module>simple-remote-control</module>
 	</modules>
 
 	<properties>
