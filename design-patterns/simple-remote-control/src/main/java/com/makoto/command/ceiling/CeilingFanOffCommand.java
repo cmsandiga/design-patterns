@@ -21,13 +21,13 @@ public class CeilingFanOffCommand implements Command
 	@Override
 	public void execute()
 	{
-		ceilingFan.open();
+		ceilingFan.off();
 	}
 
 	@Override
 	public void undo()
 	{
-		ceilingFan.down();
+		ceilingFan.off();
 	}
 
 }

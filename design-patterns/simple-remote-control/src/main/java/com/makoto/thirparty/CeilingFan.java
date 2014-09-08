@@ -3,20 +3,41 @@ package com.makoto.thirparty;
 public class CeilingFan
 {
 
-	private String message;
-	
-	public CeilingFan(String message)
+	public static final int	HIGH	= 3;
+	public static final int	MEDIUM	= 2;
+	public static final int	LOW		= 1;
+	public static final int	OFF		= 0;
+	private String			location;
+	private int				speed;
+
+	public CeilingFan(String location)
 	{
-		this.message =  message;
+		this.location = location;
+		this.speed = OFF;
 	}
 
-	public void open()
+	public void high()
 	{
-		System.out.println(message + " Ceiling fan open");
+		this.speed = HIGH;
 	}
-	
-	public void down()
+
+	public void medium()
 	{
-		System.out.println(message + " Ceiling fan down");
+		this.speed = MEDIUM;
+	}
+
+	public void low()
+	{
+		this.speed = LOW;
+	}
+
+	public void off()
+	{
+		this.speed = OFF;
+	}
+
+	public int getSpeed()
+	{
+		return speed;
 	}
 }

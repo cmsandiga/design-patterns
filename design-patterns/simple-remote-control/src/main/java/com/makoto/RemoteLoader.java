@@ -1,7 +1,7 @@
 package com.makoto;
 
 import com.makoto.command.ceiling.CeilingFanOffCommand;
-import com.makoto.command.ceiling.CeilingFanOnCommand;
+import com.makoto.command.ceiling.CeilingFanHighCommand;
 import com.makoto.command.garage.GarageDoorDownCommand;
 import com.makoto.command.garage.GarageDoorOpenCommand;
 import com.makoto.command.light.LightOffCommand;
@@ -38,7 +38,7 @@ public class RemoteLoader
 		LightOnCommand kitchenLightOnCommand = new LightOnCommand(kitchenLight);
 		LightOffCommand kitchenOffCommand = new  LightOffCommand(kitchenLight);
 		
-		CeilingFanOnCommand ceilingFanOnCommand = new CeilingFanOnCommand(ceilingFan);
+		CeilingFanHighCommand ceilingFanOnCommand = new CeilingFanHighCommand(ceilingFan);
 		CeilingFanOffCommand celiingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
 		
 		GarageDoorOpenCommand garageDoorOpenCommand = new GarageDoorOpenCommand(garageDoor);
