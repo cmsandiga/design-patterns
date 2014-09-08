@@ -1,7 +1,9 @@
 package com.makoto;
 
+import com.makoto.command.garage.GarageDoorOpenCommand;
 import com.makoto.command.light.LightOnCommand;
 import com.makoto.remote.SimpleRemoteControl;
+import com.makoto.thirparty.GarageDoor;
 import com.makoto.thirparty.Light;
 
 /**
@@ -10,7 +12,7 @@ import com.makoto.thirparty.Light;
  * @author makoton
  *
  */
-public class Main
+public class MainV2
 {
 
 	/**
@@ -20,11 +22,19 @@ public class Main
 	public static void main(String[] args)
 	{
 		SimpleRemoteControl simpleRemoteControl =  new SimpleRemoteControl();
-		Light light = new Light("");
 		
+		//Light command
+		Light light = new Light("");		
 		LightOnCommand lightOnCommand =  new LightOnCommand(light);
 		
+		//Garage command
+		GarageDoor garageDoor = new GarageDoor("");
+		GarageDoorOpenCommand garageDoorOpenCommand = new GarageDoorOpenCommand(garageDoor);
+		
 		simpleRemoteControl.setCommand(lightOnCommand);
+		simpleRemoteControl.buttonWasPressed();
+		
+		simpleRemoteControl.setCommand(garageDoorOpenCommand);
 		simpleRemoteControl.buttonWasPressed();
 	
 	}
