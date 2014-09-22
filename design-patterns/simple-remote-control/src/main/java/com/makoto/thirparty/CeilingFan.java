@@ -40,4 +40,10 @@ public class CeilingFan
 	{
 		return speed;
 	}
+
+	public String getLocation()
+	{
+		return location;
+	}
+
 }

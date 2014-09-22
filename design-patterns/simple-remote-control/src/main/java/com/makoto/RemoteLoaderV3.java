@@ -6,7 +6,6 @@ import com.makoto.command.light.LightOffCommand;
 import com.makoto.command.light.LightOnCommand;
 import com.makoto.command.stereo.StereoOffCommand;
 import com.makoto.command.stereo.StereoWithCdCommand;
-import com.makoto.remote.RemoteControl;
 import com.makoto.remote.RemoteWithUndo;
 import com.makoto.thirparty.Light;
 import com.makoto.thirparty.Stereo;
