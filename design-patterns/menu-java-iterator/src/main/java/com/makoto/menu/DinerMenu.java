@@ -1,9 +1,10 @@
 package com.makoto.menu;
 
-import com.makoto.menu.iterator.DinerMenuIterator;
-import com.makoto.menu.iterator.Iterator;
+import java.util.Iterator;
 
-public class DinerMenu
+import com.makoto.menu.iterator.DinerMenuIterator;
+
+public class DinerMenu implements Menu
 {
 	final int	MAX_ITEMS		= 6;
 	int			numberOfItems	= 0;
@@ -34,7 +35,7 @@ public class DinerMenu
 		}
 	}
 
-	public Iterator createIterator()
+	public Iterator<MenuItem> createIterator()
 	{
 		return new DinerMenuIterator(menuItems);
 	}

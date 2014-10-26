@@ -20,6 +20,11 @@
 		<module>abstract-factory-pizza-store</module>
 		<module>simple-remote-control</module>
 		<module>beverage-template-method</module>
+		<module>menu-composite</module> 
+		<module>menu-iterator</module> 
+		<module>menu-java-iterator</module> 
+		<module>gumball-machine-state</module>
+		<module>gumball-machine-refator-state</module>
 	</modules>
 
 	<properties>

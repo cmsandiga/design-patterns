@@ -1,11 +1,9 @@
 package com.makoto.menu;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import com.makoto.menu.iterator.Iterator;
-import com.makoto.menu.iterator.PancakeHouseIterator;
-
-public class PancakeHouseMenu
+public class PancakeHouseMenu implements Menu
 {
 	ArrayList<MenuItem>	menuItems;
 
@@ -25,8 +23,8 @@ public class PancakeHouseMenu
 		menuItems.add(menuItem);
 	}
 
-	public Iterator createIterator()
+	public Iterator<MenuItem> createIterator()
 	{
-		return  new PancakeHouseIterator(menuItems);
+		return menuItems.iterator();
 	}
 }
