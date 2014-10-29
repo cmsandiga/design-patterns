@@ -1,6 +1,9 @@
 package com.makoto.gumball.state;
 
+import com.makoto.gumball.GumballMachine;
+
 /**
+ * No Quarter state applying state pattern
  * 
  * @author makoton
  *

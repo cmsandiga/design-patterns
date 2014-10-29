@@ -1,5 +1,7 @@
 package com.makoto.gumball.state;
 
+import com.makoto.gumball.GumballMachine;
+
 /**
  * 
  * @author makoton
@@ -7,33 +9,57 @@ package com.makoto.gumball.state;
  */
 public class WinnerState implements State
 {
-
+	GumballMachine gumballMachine;
+	
+	public WinnerState(GumballMachine gumballMachine)
+	{
+		this.gumballMachine = gumballMachine;
+	}
+	
 	@Override
 	public void insertQuarter()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("You can't insert a quarter");
 	}
 
 	@Override
 	public void ejectQuarter()
 	{
-		// TODO Auto-generated method stub
+		System.out.println("You can't eject a quarter");
 
 	}
 
 	@Override
 	public void turnCrank()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("You can't turn crank");
 	}
 
 	@Override
 	public void dispense()
 	{
-		// TODO Auto-generated method stub
-
+		gumballMachine.releaseBall();
+		
+		if(gumballMachine.getCount() == 0)
+		{
+			gumballMachine.setState(gumballMachine.getSoldOutState());
+		}
+		else
+		{
+			gumballMachine.releaseBall();
+			System.out.println("You are a winner!, you got two gumballs or your quarter");
+			
+			if(gumballMachine.getCount() >0)
+			{
+				gumballMachine.setState(gumballMachine.getNoQuarterState());
+			}
+			else
+			{
+				System.out.println("Oops, out of gumballs");
+				gumballMachine.setState(gumballMachine.getSoldOutState());
+			}
+			
+		}
 	}
 
 }

@@ -1,4 +1,11 @@
-package com.makoto.gumball.state;
+package com.makoto.gumball;
+
+import com.makoto.gumball.state.HasQuarterState;
+import com.makoto.gumball.state.NoQuarterState;
+import com.makoto.gumball.state.SoldOutState;
+import com.makoto.gumball.state.SoldState;
+import com.makoto.gumball.state.State;
+import com.makoto.gumball.state.WinnerState;
 
 /**
  * The Gumball Machine start with SOLD_OUT state
@@ -12,6 +19,7 @@ public class GumballMachine
 	State noQuarterState;
 	State hasQuarterState;
 	State soldState;
+	State winnerState;
 
 	State state = soldOutState;
 	int count = 0;
@@ -22,6 +30,7 @@ public class GumballMachine
 		noQuarterState = new NoQuarterState(this);
 		hasQuarterState = new HasQuarterState(this);
 		soldState = new SoldState(this);
+		winnerState = new WinnerState(this);
 
 		this.count = numberGumballs;
 
@@ -39,28 +48,22 @@ public class GumballMachine
 	{
 		state.insertQuarter();
 	}
-	
+
 	public void ejectQuarter()
 	{
 		state.ejectQuarter();
 	}
-	
+
 	public void turnCrank()
 	{
 		state.turnCrank();
 		state.dispense();
 	}
-	
+
 	public void releaseBall()
 	{
 		System.out.println("A gumball comes rolling out the slot...");
-		if(count != 0)
-			count --;
-	}
-	@Override
-	public String toString()
-	{
-		return "";
+		if (count != 0) count--;
 	}
 
 	public State getSoldOutState()
@@ -68,19 +71,9 @@ public class GumballMachine
 		return soldOutState;
 	}
 
-	public void setSoldOutState(State soldOutState)
-	{
-		this.soldOutState = soldOutState;
-	}
-
 	public State getNoQuarterState()
 	{
 		return noQuarterState;
-	}
-
-	public void setNoQuarterState(State noQuarterState)
-	{
-		this.noQuarterState = noQuarterState;
 	}
 
 	public State getHasQuarterState()
@@ -88,29 +81,14 @@ public class GumballMachine
 		return hasQuarterState;
 	}
 
-	public void setHasQuarterState(State hasQuarterState)
-	{
-		this.hasQuarterState = hasQuarterState;
-	}
-
 	public State getSoldState()
 	{
 		return soldState;
 	}
 
-	public void setSoldState(State soldState)
+	public State getWinnerState()
 	{
-		this.soldState = soldState;
-	}
-
-	public State getState()
-	{
-		return state;
-	}
-
-	public void setState(State state)
-	{
-		this.state = state;
+		return winnerState;
 	}
 
 	public int getCount()
@@ -118,9 +96,18 @@ public class GumballMachine
 		return count;
 	}
 
-	public void setCount(int count)
+	public void setState(State state)
 	{
-		this.count = count;
+		this.state = state;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Mighty gumball, Inc.\n" + 
+				"Java-enabled Standing gumball Model #2004\n"+
+				"Inventory: " + count +" gumballs\n"+
+				"Machine is " + state + "\n";
 	}
 
 }

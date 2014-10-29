@@ -1,39 +1,39 @@
 package com.makoto.gumball.state;
 
+import com.makoto.gumball.GumballMachine;
+
 public class SoldOutState implements State
 {
-
+	GumballMachine gumballMachine;
+	
 	public SoldOutState(GumballMachine gumballMachine)
 	{
-		// TODO Auto-generated constructor stub
+		this.gumballMachine = gumballMachine;
 	}
 
 	@Override
 	public void insertQuarter()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("You can't insert a quarter, the machine is sold out");
 	}
 
 	@Override
 	public void ejectQuarter()
 	{
-		// TODO Auto-generated method stub
+		System.out.println("You can't eject a quarter, the machine is sold out");
 
 	}
 
 	@Override
 	public void turnCrank()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("You can't turn a crank, the machine is sold out");
 	}
 
 	@Override
 	public void dispense()
 	{
-		// TODO Auto-generated method stub
-
+		System.out.println("You can't disponse a quarter, the machine is sold out");
 	}
 
 }
