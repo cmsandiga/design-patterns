@@ -25,6 +25,7 @@
 		<module>menu-java-iterator</module> 
 		<module>gumball-machine-state</module>
 		<module>gumball-machine-refator-state</module>
+		<module>gumball-machine-proxy</module>
 	</modules>
 
 	<properties>
