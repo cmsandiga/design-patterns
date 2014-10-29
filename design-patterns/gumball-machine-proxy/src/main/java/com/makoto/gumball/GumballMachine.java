@@ -103,6 +103,11 @@ public class GumballMachine
 		this.state = state;
 	}
 
+	public State getState()
+	{
+		return state;
+	}
+
 	public String getLocation()
 	{
 		return location;
