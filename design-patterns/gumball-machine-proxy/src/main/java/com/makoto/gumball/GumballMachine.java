@@ -1,5 +1,8 @@
 package com.makoto.gumball;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 import com.makoto.gumball.state.HasQuarterState;
 import com.makoto.gumball.state.NoQuarterState;
 import com.makoto.gumball.state.SoldOutState;
@@ -13,8 +16,10 @@ import com.makoto.gumball.state.WinnerState;
  * @author makoton
  *
  */
-public class GumballMachine
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote
 {
+	private static final long serialVersionUID = -2501095534384734514L;
+	
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
@@ -26,7 +31,7 @@ public class GumballMachine
 
 	String location;
 
-	public GumballMachine(String location, int numberGumballs)
+	public GumballMachine(String location, int numberGumballs) throws RemoteException
 	{
 		soldOutState = new SoldOutState(this);
 		noQuarterState = new NoQuarterState(this);
@@ -95,6 +100,7 @@ public class GumballMachine
 
 	public int getCount()
 	{
+		System.out.println("Calling to getCount");
 		return count;
 	}
 

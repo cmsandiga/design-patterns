@@ -15,8 +15,10 @@ import com.makoto.gumball.GumballMachine;
  */
 public class HasQuarterState implements State
 {
-
-	GumballMachine gumballMachine;
+	private static final long serialVersionUID = -5510690594418990237L;
+	
+	transient GumballMachine gumballMachine;
+	
 	Random random = new Random(System.currentTimeMillis());
 
 	public HasQuarterState(GumballMachine gumballMachine)

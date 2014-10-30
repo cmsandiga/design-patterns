@@ -10,7 +10,9 @@ import com.makoto.gumball.GumballMachine;
  */
 public class NoQuarterState implements State
 {
-	GumballMachine gumballMachine;
+	private static final long serialVersionUID = -7190805015001910886L;
+	
+	transient GumballMachine gumballMachine;
 	
 	public NoQuarterState(GumballMachine gumballMachine)
 	{

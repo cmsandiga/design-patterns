@@ -1,5 +1,8 @@
 package com.makoto.gumball;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 /**
  * Test drive of our gumball machine
@@ -20,23 +23,22 @@ public class GunballMachineTestDrive
 
 		int count = Integer.parseInt(args[1]);
 
-		GumballMachine gumballMachine = new GumballMachine(args[0], count);
-		GumballMonitor monitor = new GumballMonitor(gumballMachine);
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
+		GumballMachine gumballMachine;
+		try
+		{
+			gumballMachine = new GumballMachine(args[0], count);
+			Naming.rebind(args[0]+ "/gumballmachine", gumballMachine);
 		
-		
-		monitor.report();
+		}
+		catch (RemoteException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (MalformedURLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

@@ -4,7 +4,9 @@ import com.makoto.gumball.GumballMachine;
 
 public class SoldOutState implements State
 {
-	GumballMachine gumballMachine;
+	private static final long serialVersionUID = -319988944744930095L;
+	
+	transient GumballMachine gumballMachine;
 	
 	public SoldOutState(GumballMachine gumballMachine)
 	{

@@ -9,7 +9,10 @@ import com.makoto.gumball.GumballMachine;
  */
 public class WinnerState implements State
 {
-	GumballMachine gumballMachine;
+	private static final long serialVersionUID = 682333872283145622L;
+
+	
+	transient GumballMachine gumballMachine;
 	
 	public WinnerState(GumballMachine gumballMachine)
 	{
