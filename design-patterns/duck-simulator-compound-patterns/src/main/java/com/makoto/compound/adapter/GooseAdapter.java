@@ -1,43 +1,37 @@
-/**
- * 
- */
-package com.makoto.compound.duck;
+package com.makoto.compound.adapter;
 
 import com.makoto.compound.behaivor.Quackable;
+import com.makoto.compound.duck.Goose;
 import com.makoto.compound.observer.Observable;
 import com.makoto.compound.observer.Observer;
 
-/**
- * @author makoton
- *
- */
-public class MallarDuck implements Quackable
+public class GooseAdapter implements Quackable
 {
-	Observable observable;
+	Goose goose;
+	Observable duck;
 	
-	public MallarDuck()
+	public GooseAdapter(Goose goose)
 	{
-		this.observable = new Observable(this);
-		
+		this.goose = goose;
+		this.duck =  new Observable(this);
 	}
-	
 	@Override
 	public void quack()
 	{
-		System.out.println("Quack");
+		goose.honk();
 		notifyObservers();
 	}
-
 	@Override
 	public void registerObserver(Observer observer)
 	{
-		observable.registerObserver(observer);
+		duck.registerObserver(observer);
 	}
-
 	@Override
 	public void notifyObservers()
 	{
-		observable.notifyObservers();
+		duck.notifyObservers();
+		
 	}
+
 
 }

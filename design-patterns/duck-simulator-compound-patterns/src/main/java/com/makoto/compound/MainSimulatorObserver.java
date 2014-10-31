@@ -6,17 +6,13 @@ import com.makoto.compound.adapter.GooseAdapter;
 import com.makoto.compound.behaivor.Quackable;
 import com.makoto.compound.composite.Flock;
 import com.makoto.compound.decorator.QuackCounter;
-import com.makoto.compound.duck.DuckCall;
 import com.makoto.compound.duck.Goose;
-import com.makoto.compound.duck.MallarDuck;
-import com.makoto.compound.duck.RedHeadDuck;
-import com.makoto.compound.duck.RubberDuck;
 
-public class MainSimulator
+public class MainSimulatorObserver
 {
 	public static void main(String[] args)
 	{
-		MainSimulator simulator =  new MainSimulator();
+		MainSimulatorObserver simulator =  new MainSimulatorObserver();
 		AbstractDuckFactory duckFactory =  new CountingDuckFactory();
 		
 		simulator.simulate(duckFactory);
@@ -30,8 +26,7 @@ public class MainSimulator
 		Quackable rubberDuck = duckFactory.createRedheadDuck();
 		Quackable gooseAdapter = new GooseAdapter(new Goose());
 		
-		System.out.println("\nDuck Simulator: With composite - Flocks");
-		
+
 		Flock flockOfDucks =  new Flock();
 		flockOfDucks.add(redheadDuck);
 		flockOfDucks.add(duckCall);
@@ -51,12 +46,19 @@ public class MainSimulator
 		flockOfMallards.add(mallarFour);
 		
 		flockOfDucks.add(flockOfMallards);
-		System.out.println("\nDuck Simulator: Whole flock Simulation");
+		/*System.out.println("\nDuck Simulator: Whole flock Simulation");
 		simulate(flockOfDucks);
 		
 		System.out.println("\nDuck Simulator: Mallard flock Simulation");
 		simulate(flockOfMallards);
+		*/
 		
+		System.out.println("\nDuck Simulator: With Observer");
+		
+		QuackoLogist quackLogist =  new QuackoLogist();
+		flockOfDucks.registerObserver(quackLogist);
+		
+		simulate(flockOfDucks);
 		System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times");
 		
 	}
