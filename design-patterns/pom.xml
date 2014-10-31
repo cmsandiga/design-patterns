@@ -26,6 +26,8 @@
 		<module>gumball-machine-state</module>
 		<module>gumball-machine-refator-state</module>
 		<module>gumball-machine-proxy</module>
+		<module>handler-protection-proxy</module>
+		<module>duck-simulator-compound-patterns</module>
 	</modules>
 
 	<properties>
